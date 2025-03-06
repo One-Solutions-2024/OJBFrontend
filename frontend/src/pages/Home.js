@@ -1,42 +1,39 @@
+// src/pages/Home.js
 import React, { useEffect, useState } from 'react';
 import JobCard from '../components/JobCard';
 import { getJobs } from '../services/jobService';
 
-function Home() {
+const Home = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const fetchJobs = async () => {
+    const loadJobs = async () => {
       try {
         const data = await getJobs();
         setJobs(data);
       } catch (error) {
-        console.error('Error fetching jobs:', error);
+        console.error('Error loading jobs:', error);
       } finally {
         setLoading(false);
       }
     };
-
-    fetchJobs();
+    loadJobs();
   }, []);
 
+  if (loading) return <div className="loading">Loading jobs...</div>;
+
   return (
-    <div className="container">
-      <h1>Job Listings</h1>
-      {loading ? (
-        <p>Loading job listings...</p>
-      ) : jobs.length === 0 ? (
-        <p>No job listings available.</p>
+    <div className="job-list">
+      {jobs.length > 0 ? (
+        jobs.map(job => <JobCard key={job.id} job={job} />)
       ) : (
-        <div className="job-list">
-          {jobs.map((job) => (
-            <JobCard key={job.id} job={job} />
-          ))}
+        <div className="no-jobs">
+          <p>No jobs found. Please try again later.</p>
         </div>
       )}
     </div>
   );
-}
+};
 
 export default Home;
