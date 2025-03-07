@@ -1,0 +1,7 @@
+.image-logo{
+    height: 150px;
+    width: 300px;
+    aspect-ratio: auto 300 / 225;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getJobById } from '../services/jobService';
-
+import "./JobDetail.css";
 const JobDetail = () => {
   const { id } = useParams();
   const [job, setJob] = useState(null);
@@ -26,24 +26,70 @@ const JobDetail = () => {
 
   return (
     <div className="job-detail">
-      <h1>{job.job_title}</h1>
-      <div className="meta-section">
-        <p><strong>Company:</strong> {job.company}</p>
-        <p><strong>Location:</strong> {job.location}</p>
-        <p><strong>Posted:</strong> {new Date(job.posted_date).toLocaleDateString()}</p>
+      <div className="company-header">
+        {job.company_image ? (
+          <img 
+            src={job.company_image} 
+            alt={job.company} 
+            className="company-logo-large"
+            onError={(e) => e.target.src = '/placeholder.png'}  // Set a default image
+          />
+        ) : (
+          <img src="/placeholder.png" alt="Placeholder" className="company-logo-large" />
+        )}
+        <div className="job-titles">
+          <h1>{job.title}</h1>
+          <h2>{job.company}</h2>
+        </div>
       </div>
+
+      <div className="job-meta">
+        {job.location && (
+          <div className="meta-item">
+            <span>📍 Location</span>
+            <p>{job.location}</p>
+          </div>
+        )}
+        {job.employment_type && (
+          <div className="meta-item">
+            <span>💼 Employment Type</span>
+            <p>{job.employment_type}</p>
+          </div>
+        )}
+        {job.salary && (
+          <div className="meta-item">
+            <span>💰 Salary</span>
+            <p>{job.salary}</p>
+          </div>
+        )}
+        {job.date_posted && (
+          <div className="meta-item">
+            <span>📅 Posted</span>
+            <p>
+              {new Date(job.date_posted).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+              })}
+            </p>
+          </div>
+        )}
+      </div>
+
       <div className="actions">
-        <a
-          href={`https://remote.co/remote-jobs/apply/${job.id}`} // Update with actual apply URL
-          className="apply-button"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Apply Now
-        </a>
-        <Link to="/" className="back-button">
-          &larr; Back to Listings
-        </Link>
+
+        <div className="apply-link-container">
+                <a
+                  href={job.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="image-apply-link"
+                >
+                  Apply
+                </a>
+                
+              </div>
+        <Link to="/" className="back-button">← Back to Listings</Link>
       </div>
     </div>
   );

@@ -1,25 +1,30 @@
 // src/components/JobCard.js
 import React from 'react';
-import { Link } from 'react-router-dom';
+import './JobCard.css';
 
 const JobCard = ({ job }) => (
-  <div className="job-card">
-    <h3>{job.title}</h3>
-    <div className="meta">
-      <span className="company">{job.company}</span>
-      <span className="location">{job.location}</span>
+  <div className="job-card" onClick={() => window.open(`/job/${job.id}`, '_blank')}>
+    <div className="company-logo">
+        <img 
+          src={job.company_image} 
+          alt={job.company.slice(0, 10)} 
+          className='company-card-logo'
+        />
     </div>
+    <div>
+    <h3>{job.title.slice(0, 20)}</h3>
+    <span className="company">{job.company.slice(0, 10)}</span>
+    </div>
+      <span className="location">{job.location}</span>
     <div className="details">
       <span className="source">{job.source}</span>
-      <span className="date">{new Date(job.date_posted).toLocaleDateString()}</span>
-    </div>
-    <div className="actions">
-      <Link to={`/job/${job.id}`} className="view-details">
-        View Details
-      </Link>
-      <a href={job.url} target="_blank" rel="noopener" className="apply">
-        Apply Now
-      </a>
+      <span className="date">
+        {new Date(job.date_posted).toLocaleDateString('en-US', {
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric'
+        })}
+      </span>
     </div>
   </div>
 );

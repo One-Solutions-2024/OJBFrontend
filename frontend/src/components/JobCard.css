@@ -1,0 +1,11 @@
+.job-card{
+    cursor: pointer;
+    display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.company-card-logo{
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+}

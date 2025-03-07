@@ -2,7 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import JobCard from '../components/JobCard';
 import { getJobs } from '../services/jobService';
-
+import { assets } from "../assets/assets";
+import "./Home.css"
 const Home = () => {
   const [jobs, setJobs] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -21,15 +22,27 @@ const Home = () => {
     loadJobs();
   }, []);
 
-  if (loading) return <div className="loading">Loading jobs...</div>;
-
   return (
-    <div className="job-list">
-      {jobs.length > 0 ? (
-        jobs.map(job => <JobCard key={job.id} job={job} />)
+    <div className="home-page">
+      <h1>XR Job Board</h1>
+      <img
+        src={assets.xrjb_logo}
+        className="image-logo"
+        alt="comapny logo"
+      />
+      <h3>All XR jobs and opportunities in one place.</h3>
+      <p>Explore the top XR roles with our curated listings from leading companies worldwide.</p>
+      {loading ? (
+        <div className="loading">Loading jobs...</div>
       ) : (
-        <div className="no-jobs">
-          <p>No jobs found. Please try again later.</p>
+        <div className="job-grid">
+          {jobs.length > 0 ? (
+            jobs.map(job => <JobCard key={job.id} job={job} />)
+          ) : (
+            <div className="no-jobs">
+              <p>No jobs found. Please check back later.</p>
+            </div>
+          )}
         </div>
       )}
     </div>
