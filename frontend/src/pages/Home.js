@@ -36,6 +36,20 @@ const Home = () => {
         <div className="loading">Loading jobs...</div>
       ) : (
         <div className="job-grid">
+          <div className="job-meta-card">
+            <div>
+            </div>
+            <div>
+              <h5>Company Name/Role</h5>
+              <span className="company"></span>
+            </div>
+            <h5>Location</h5>
+            <div className="details">
+              <h5>
+                Posted on
+              </h5>
+            </div>
+          </div>
           {jobs.length > 0 ? (
             jobs.map(job => <JobCard key={job.id} job={job} />)
           ) : (

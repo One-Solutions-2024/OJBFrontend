@@ -1,7 +1,9 @@
+// src/components/JobDetail.js
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { getJobById } from '../services/jobService';
 import "./JobDetail.css";
+
 const JobDetail = () => {
   const { id } = useParams();
   const [job, setJob] = useState(null);
@@ -27,16 +29,12 @@ const JobDetail = () => {
   return (
     <div className="job-detail">
       <div className="company-header">
-        {job.company_image ? (
           <img 
             src={job.company_image} 
             alt={job.company} 
             className="company-logo-large"
-            onError={(e) => e.target.src = '/placeholder.png'}  // Set a default image
           />
-        ) : (
-          <img src="/placeholder.png" alt="Placeholder" className="company-logo-large" />
-        )}
+       
         <div className="job-titles">
           <h1>{job.title}</h1>
           <h2>{job.company}</h2>
@@ -77,18 +75,16 @@ const JobDetail = () => {
       </div>
 
       <div className="actions">
-
         <div className="apply-link-container">
-                <a
-                  href={job.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="image-apply-link"
-                >
-                  Apply
-                </a>
-                
-              </div>
+          <a
+            href={job.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="image-apply-link"
+          >
+            Apply
+          </a>
+        </div>
         <Link to="/" className="back-button">← Back to Listings</Link>
       </div>
     </div>

@@ -1,7 +1,7 @@
 // src/services/jobService.js
 import axios from 'axios';
 
-const API_URL = 'https://xrjobsboard.onrender.com/api';
+const API_URL = 'http://localhost:5000/api';
 
 export const getJobs = async () => {
   try {

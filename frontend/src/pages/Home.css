@@ -12,3 +12,16 @@
         aspect-ratio: auto 200 / 150;
     }
 }
+.job-meta-card {
+    display: flex;
+    gap: 1rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+  .job-meta-card{
+    display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
