@@ -1,22 +1,12 @@
-.job-card{
-    cursor: pointer;
-    display: flex;
-  align-items: center;
-  justify-content: space-around;
-}
-.company-card-logo{
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-}
-/* JobCard.css */
 .job-card {
   display: flex;
-  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
   padding: 1.5rem;
   background: white;
   border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.2s;
 }
@@ -32,6 +22,9 @@
   border-radius: 8px;
   overflow: hidden;
   background: #f5f5f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .company-card-logo {
@@ -40,19 +33,28 @@
   object-fit: contain;
 }
 
-
-.job-meta {
+.job-details {
+  flex-grow: 1;
   display: flex;
-  gap: 1rem;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
-  color: #666;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.job-title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #333;
 }
 
 .company {
   font-weight: 500;
   color: #2d64bc;
+  display: block;
+  text-align: left;
+  min-width: 150px; /* Adjust this value as needed to align all company names */
 }
+
+
 
 .location {
   display: flex;
