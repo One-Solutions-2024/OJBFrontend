@@ -30,15 +30,15 @@ const JobDetail = () => {
     <div className="job-detail">
       <div className="company-header">
           <img 
-            src={job.company_image} 
-            alt={job.company} 
+        src={`${job.image_link}`}
+        alt={job.company} 
             className="company-logo-large"
           />
        
         <div className="job-titles">
           <h1>{job.title}</h1>
-          <h2>{job.company}</h2>
-        </div>
+          <span className="company">{job.companyname}</span>
+          </div>
       </div>
 
       <div className="job-meta">
