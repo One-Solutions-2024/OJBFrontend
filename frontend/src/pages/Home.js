@@ -6,14 +6,35 @@ import { assets } from "../assets/assets";
 import "./Home.css";
 
 const Home = () => {
-  const [jobs, setJobs] = useState([]);
+  const [featuredJob, setFeaturedJob] = useState(null);
+  const [allJobs, setAllJobs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const loadJobs = async () => {
       try {
         const data = await getJobs();
-        setJobs(data);
+        setAllJobs(data); // Save all jobs
+        const now = new Date();
+        // Filter jobs posted within the last 2 days (today or yesterday)
+        const recentJobs = data.filter(job => {
+          const jobDate = new Date(job.date_posted);
+          const diffDays = (now - jobDate) / (1000 * 60 * 60 * 24);
+          return diffDays < 2;
+        });
+        let featured;
+        if (recentJobs.length > 0) {
+          // Pick the most recent among recent jobs
+          featured = recentJobs.sort(
+            (a, b) => new Date(b.date_posted) - new Date(a.date_posted)
+          )[0];
+        } else if (data.length > 0) {
+          // Otherwise, pick the most recent job overall
+          featured = data.sort(
+            (a, b) => new Date(b.date_posted) - new Date(a.date_posted)
+          )[0];
+        }
+        setFeaturedJob(featured);
       } catch (error) {
         console.error('Error loading jobs:', error);
       } finally {
@@ -22,6 +43,9 @@ const Home = () => {
     };
     loadJobs();
   }, []);
+
+  // Remove the featured job from the list to avoid duplication.
+  const jobsToShow = featuredJob ? allJobs.filter(job => job.id !== featuredJob.id) : allJobs;
 
   return (
     <div className="home-page">
@@ -32,30 +56,39 @@ const Home = () => {
         alt="company logo"
       />
       <h3>All jobs and opportunities in one place.</h3>
-      <p>Explore the top Developer and Tester roles with our curated listings from leading companies India.</p>
+      <p>
+        Explore the top Developer and Tester roles with our curated listings from leading companies in India.
+      </p>
       {loading ? (
         <div className="loading">Loading jobs...</div>
       ) : (
-        <div className="job-grid">
-          <div className="job-meta-card">
-            <div></div>
-            <div>
-              <h5>Company Name/Role</h5>
-              <span className="company"></span>
+        <>
+          {featuredJob && (
+            <div className="featured-job">
+              <JobCard job={featuredJob} />
             </div>
-            <h5>Location</h5>
-            <div className="details">
-              <h5>Posted on</h5>
-            </div>
-          </div>
-          {jobs.length === 0 ? (
-            <div className="no-jobs">
-              <p>No jobs found. Please check back later.</p>
-            </div>
-          ) : (
-            jobs.map(job => <JobCard key={job.id} job={job} />)
           )}
-        </div>
+          <div className="job-grid">
+            <div className="job-meta-card">
+              <div></div>
+              <div>
+                <h5>Company Name/Role</h5>
+                <span className="company"></span>
+              </div>
+              <h5>Location</h5>
+              <div className="details">
+                <h5>Posted on</h5>
+              </div>
+            </div>
+            {jobsToShow.length === 0 ? (
+              <div className="no-jobs">
+                <p>No jobs found. Please check back later.</p>
+              </div>
+            ) : (
+              jobsToShow.map(job => <JobCard key={job.id} job={job} />)
+            )}
+          </div>
+        </>
       )}
     </div>
   );

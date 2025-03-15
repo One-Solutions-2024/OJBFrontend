@@ -66,3 +66,16 @@
   font-size: 0.85rem;
   color: #888;
 }
+/* src/components/JobCard.css */
+
+.job-card {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  margin: 1rem;
+  border-radius: 8px;
+  transition: border 0.3s ease;
+}
+
+.job-card.highlight {
+  border: 2px solid #ff5722; /* Adjust the color as needed */
+}

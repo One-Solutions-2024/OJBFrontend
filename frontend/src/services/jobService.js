@@ -14,7 +14,6 @@ export const getJobs = async () => {
 
 export const getJobById = async (id, slug) => {
   try {
-    // API now expects both id and slug
     const { data } = await axios.get(`${API_URL}/jobs/${id}/${slug}`);
     return data;
   } catch (error) {
