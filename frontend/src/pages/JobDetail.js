@@ -70,6 +70,13 @@ const JobDetail = () => {
             </p>
           </div>
         )}
+          {job.description && (
+          <div className="meta-item">
+            <span>Description</span>
+            <p>{job.description}</p>
+          </div>
+        )}
+        
       </div>
 
       <div className="actions">
