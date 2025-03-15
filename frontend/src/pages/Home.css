@@ -1,9 +1,10 @@
 .image-logo{
-    height: 150px;
+    height: 200px;
     width: 300px;
     aspect-ratio: auto 300 / 225;
     margin-top: 10px;
     margin-bottom: 20px;
+    border-radius: 10px;
 }
 @media (max-width:480px){
     .image-logo{
@@ -24,4 +25,7 @@
     display: flex;
   align-items: center;
   justify-content: space-around;
+}
+h1 {
+  text-decoration: underline;
 }

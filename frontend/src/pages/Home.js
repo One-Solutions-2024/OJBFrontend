@@ -25,7 +25,7 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      <h1>One Job Board</h1>
+      <h1>ONE Job Board</h1>
       <img
         src={assets.one_job_board_logo}
         className="image-logo"
