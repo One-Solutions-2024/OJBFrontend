@@ -1,7 +1,6 @@
-// src/services/jobService.js
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = 'https://xrjobsbackend.onrender.com/api';
 
 export const getJobs = async () => {
   try {
@@ -13,9 +12,10 @@ export const getJobs = async () => {
   }
 };
 
-export const getJobById = async (id) => {
+export const getJobById = async (id, slug) => {
   try {
-    const { data } = await axios.get(`${API_URL}/jobs/${id}`);
+    // API now expects both id and slug
+    const { data } = await axios.get(`${API_URL}/jobs/${id}/${slug}`);
     return data;
   } catch (error) {
     console.error('Error fetching job:', error);
