@@ -25,9 +25,9 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      <h1>XR Job Board</h1>
+      <h1>One Job Board</h1>
       <img
-        src={assets.xrjb_logo}
+        src={assets.one_job_board_logo}
         className="image-logo"
         alt="company logo"
       />

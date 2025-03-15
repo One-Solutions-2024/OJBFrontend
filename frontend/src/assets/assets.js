@@ -1,4 +1,3 @@
-import xrjb_logo from "./xrjb_logo.png"
+import one_job_board_logo from "./one_job_board_logo.jpg"
 export const assets = {
-    xrjb_logo
-}
+    one_job_board_logo}
