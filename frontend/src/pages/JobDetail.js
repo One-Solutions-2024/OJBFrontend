@@ -7,6 +7,7 @@ const JobDetail = () => {
   const { id, slug } = useParams();
   const [job, setJob] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [clickCount, setClickCount] = useState(0); // new state variable for click count
 
   useEffect(() => {
     const fetchJob = async () => {
@@ -35,7 +36,7 @@ const JobDetail = () => {
         />
         <div className="job-titles">
           <h1>{job.title}</h1>
-          <span className="company">{job.companyname}</span>
+            <h3><strong className="company">{job.companyname.toUpperCase()}</strong></h3>
         </div>
       </div>
 
@@ -70,23 +71,25 @@ const JobDetail = () => {
             </p>
           </div>
         )}
-          {job.description && (
+        {job.description && (
           <div className="meta-item">
             <span>Description</span>
             <p>{job.description}</p>
           </div>
         )}
-        
       </div>
 
       <div className="actions">
+      <span className='click-count'>* Over {clickCount} People clicked to Apply</span>
+
         <div className="apply-link-container">
           <a
             href={job.apply_link}
             target="_blank"
             rel="noopener noreferrer"
             className="image-apply-link"
-           >
+            onClick={() => setClickCount(clickCount + 1)} // update click count
+          >
             Apply
           </a>
         </div>

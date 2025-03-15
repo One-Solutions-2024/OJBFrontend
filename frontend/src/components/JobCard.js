@@ -26,7 +26,7 @@ const JobCard = ({ job }) => {
       </div>
       <div>
         <h4>{job.title.slice(0, 20)}</h4>
-        <span className="company">{job.companyname.slice(0,20)}</span>
+       <span className="company">{(job.companyname.slice(0,20)).toUpperCase()}</span>
       </div>
       <div>
         <span className="location">{job.location.slice(0,20)}</span>

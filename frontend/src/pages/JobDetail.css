@@ -118,3 +118,8 @@
   .back-button:hover {
     background: #f0f4f9;
   }
+  .click-count{
+    color: #888;
+    font-size: 12px;
+  }
+  
