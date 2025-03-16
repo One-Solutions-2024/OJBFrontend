@@ -76,8 +76,8 @@ const Home = () => {
                 <span className="company"></span>
               </div>
               <h5>Location</h5>
-              <div className="details">
-                <h5>Posted on</h5>
+              <div className="meta-details">
+                <h5>Posted</h5>
               </div>
             </div>
             {jobsToShow.length === 0 ? (

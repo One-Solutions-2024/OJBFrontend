@@ -7,6 +7,13 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.2s;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  transition: border 0.3s ease;
+  width: auto;
+  margin: 0.5rem 0;
+  border-radius: 15px;
+  width: 100%;
 }
 
 .job-card:hover {
@@ -82,16 +89,6 @@
 /* src/components/JobCard.css */
 .salary {
   color: #888;
-}
-
-.job-card {
-  padding: 1rem;
-  border: 1px solid #ddd;
-  transition: border 0.3s ease;
-  width: auto;
-  padding: 1rem;
-  margin: 1rem 0;
-  border-radius: 15px;
 }
 
 .job-card.highlight {

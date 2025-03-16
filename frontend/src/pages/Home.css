@@ -19,13 +19,23 @@
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 1rem;
+  gap: 1.5rem;
   background: white;
-  border-radius: 15px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s;
+  padding-left: 1.5rem;
+  border: 1px solid #ddd;
+  transition: border 0.3s ease;
+  width: auto;
+  margin: 0.5rem 0;
+  border-radius: 15px;
+  width: 100%;
 }
-
 
 h1 {
   text-decoration: underline;
+}
+.meta-details{
+  padding-right: 10px;
 }
