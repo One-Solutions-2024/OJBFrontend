@@ -10,6 +10,10 @@ const JobCard = ({ job }) => {
   const diffDays = diffTime / (1000 * 60 * 60 * 24);
   // Consider a job "recent" if it was posted today or yesterday.
   const isRecent = diffDays < 2;
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
+  };
+
 
   return (
     <div
@@ -17,23 +21,24 @@ const JobCard = ({ job }) => {
       onClick={() => window.open(`/jobs/${job.id}/${job.url}`, '_blank')}
     >
       <div className="company-logo">
-        <img 
+        <img
           src={job.image_link}
-          alt={job.companyname} 
+          alt={job.companyname}
           className="company-card-logo"
           onError={(e) => { e.target.onerror = null; e.target.src = '/placeholder.png'; }}
         />
       </div>
-      <div>
-        <h4>{job.title.slice(0, 20)}</h4>
-       <span className="company">{(job.companyname.slice(0,20)).toUpperCase()}</span>
+     <div className='immage-title-container'>
+     <div className='title-company-container'>
+        <span className='job-title'>{job.title.slice(0, 20)}</span>
+        <span className="company">{capitalize(job.companyname.slice(0, 10))}</span>
       </div>
-      <div>
-        <span className="location">{job.location.slice(0,20)}</span>
-        <span>{job.salary}</span>
+      <div className='location-salary-container'>
+        <span className="location">📍{job.location.slice(0, 20)}</span>
+        <span className='salary'>💰{job.salary}</span>
       </div>
       <div className="details">
-        <span className="date">
+        <span className="date">📅
           {new Date(job.date_posted).toLocaleDateString('en-US', {
             year: 'numeric',
             month: 'short',
@@ -41,6 +46,7 @@ const JobCard = ({ job }) => {
           })}
         </span>
       </div>
+     </div>
     </div>
   );
 };

@@ -1,31 +1,31 @@
-.image-logo{
-    height: 200px;
-    width: 300px;
-    aspect-ratio: auto 300 / 225;
-    margin-top: 10px;
-    margin-bottom: 20px;
-    border-radius: 10px;
+.image-logo {
+  height: 200px;
+  width: 300px;
+  aspect-ratio: auto 300 / 225;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 10px;
 }
-@media (max-width:480px){
-    .image-logo{
-        height: 100px;
-        width: 200px;
-        aspect-ratio: auto 200 / 150;
-    }
-}
-.job-meta-card {
-    display: flex;
-    gap: 1rem;
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-    transition: transform 0.2s;
+
+@media (max-width:480px) {
+  .image-logo {
+    height: 100px;
+    width: 200px;
+    aspect-ratio: auto 200 / 150;
   }
-  .job-meta-card{
-    display: flex;
-  align-items: center;
-  justify-content: space-around;
 }
+
+.job-meta-card {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+
 h1 {
   text-decoration: underline;
 }

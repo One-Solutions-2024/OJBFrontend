@@ -1,11 +1,9 @@
 .job-card {
   display: flex;
   align-items: center;
-  justify-content: space-between;
   gap: 1.5rem;
   padding: 1.5rem;
   background: white;
-  border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.2s;
@@ -17,20 +15,26 @@
 
 .company-logo {
   flex-shrink: 0;
-  width: 60px;
-  height: 60px;
-  border-radius: 8px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   overflow: hidden;
   background: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-right: 100px;
 }
 
-.company-card-logo {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+.immage-title-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.location-salary-container {
+  width: 250px;
 }
 
 .job-details {
@@ -44,37 +48,71 @@
   font-size: 1.1rem;
   font-weight: bold;
   color: #333;
+  padding: 0px;
+  margin: 0px;
+  text-align: left;
 }
 
 .company {
   font-weight: 500;
-  color: #2d64bc;
+  color: #888;
   display: block;
   text-align: left;
-  min-width: 150px; /* Adjust this value as needed to align all company names */
+  padding-top: 5px;
+  min-width: 150px;
+  /* Adjust this value as needed to align all company names */
 }
 
-
+.title-company-container {
+  width: 300px;
+}
 
 .location {
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  padding-bottom: 5px;
 }
 
 .date {
   font-size: 0.85rem;
   color: #888;
 }
+
 /* src/components/JobCard.css */
+.salary {
+  color: #888;
+}
 
 .job-card {
   padding: 1rem;
   border: 1px solid #ddd;
-  border-radius: 8px;
   transition: border 0.3s ease;
+  width: auto
 }
 
 .job-card.highlight {
-  border: 2px solid #ff5722; /* Adjust the color as needed */
+  border: 2px solid #ff5722;
+  /* Adjust the color as needed */
+}
+
+@media (max-width: 768px) {
+  .company-logo {
+    margin-right: 10px;
+  }
+
+  .immage-title-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .location-salary-container {
+    width: 100%;
+  }
+
+  .details {
+    width: 100%;
+  }
 }

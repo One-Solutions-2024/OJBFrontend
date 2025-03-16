@@ -32,7 +32,6 @@ h1 {
 .job-card {
   border: 1px solid #ccc;
   padding: 15px;
-  border-radius: 5px;
   transition: box-shadow 0.3s;
 }
 
@@ -54,7 +53,7 @@ h1 {
   border: 1px solid #ddd;
   padding: 1rem;
   margin: 1rem 0;
-  border-radius: 8px;
+  border-radius: 15px;
 }
 
 .actions {
