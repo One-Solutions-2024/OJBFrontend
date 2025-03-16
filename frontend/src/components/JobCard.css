@@ -88,7 +88,10 @@
   padding: 1rem;
   border: 1px solid #ddd;
   transition: border 0.3s ease;
-  width: auto
+  width: auto;
+  padding: 1rem;
+  margin: 1rem 0;
+  border-radius: 15px;
 }
 
 .job-card.highlight {
