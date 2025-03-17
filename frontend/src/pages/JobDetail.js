@@ -92,8 +92,8 @@ const JobDetail = () => {
           >
             Apply
           </a>
+          <Link to="/" className="back-button">← Back</Link>
         </div>
-        <Link to="/" className="back-button">← Back</Link>
       </div>
     </div>
   );
