@@ -101,6 +101,8 @@
     text-decoration: none;
     border-radius: 6px;
     transition: background 0.2s;
+    margin-left: 5px;
+    margin-right: 5px;
   }
   
   .image-apply-link:hover {
@@ -123,3 +125,12 @@
     font-size: 12px;
   }
   
+  
+  @media (max-width:480px){
+    h1.company-role {  /* More specific */
+      font-size: 15px !important; /* Force apply */
+  }
+    .company{
+      font-size: 15px;
+    }
+  }

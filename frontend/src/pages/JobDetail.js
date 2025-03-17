@@ -35,7 +35,7 @@ const JobDetail = () => {
           className="company-logo-large"
         />
         <div className="job-titles">
-          <h1>{job.title}</h1>
+          <h1 className="company-role">{job.title}</h1>
             <h3><strong className="company">{job.companyname.toUpperCase()}</strong></h3>
         </div>
       </div>
