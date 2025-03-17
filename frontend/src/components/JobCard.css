@@ -2,14 +2,12 @@
   display: flex;
   align-items: center;
   gap: 1.5rem;
-  padding: 1.5rem;
   background: white;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.2s;
   padding: 1rem;
   border: 1px solid #ddd;
-  transition: border 0.3s ease;
+  transition: transform 0.2s, border 0.3s ease;
   width: auto;
   margin: 0.5rem 0;
   border-radius: 15px;
@@ -54,8 +52,8 @@
   font-size: 1.1rem;
   font-weight: bold;
   color: #333;
-  padding: 0px;
-  margin: 0px;
+  padding: 0;
+  margin: 0;
   text-align: left;
 }
 
@@ -66,7 +64,6 @@
   text-align: left;
   padding-top: 5px;
   min-width: 150px;
-  /* Adjust this value as needed to align all company names */
 }
 
 .title-company-container {
@@ -85,23 +82,25 @@
   color: #888;
 }
 
-/* src/components/JobCard.css */
 .salary {
   color: #888;
 }
 
 .job-card.highlight {
   border: 2px solid #ff5722;
-  /* Adjust the color as needed */
 }
 
 @media (max-width: 768px) {
+  .job-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .company-logo {
     margin-right: 10px;
   }
 
   .immage-title-container {
-    display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -111,7 +110,7 @@
     width: 100%;
   }
 
-  .details {
+  .job-details {
     width: 100%;
   }
 }

@@ -1,67 +1,71 @@
-.job-list-container{
+/* Container for job list */
+.job-list-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
+/* Styling for the logo image */
 .image-logo {
   height: 160px;
   width: 300px;
-  aspect-ratio: auto 300 / 225;
+  aspect-ratio: 4 / 3; /* Equivalent to 300 / 225 */
   margin-top: 10px;
   margin-bottom: 20px;
   border-radius: 10px;
+  object-fit: cover;
 }
 
-.image-log0-con{
+/* Container for the logo image (if additional elements are present) */
+.image-log0-con {
   display: flex;
   flex-direction: column;
   margin-left: 50px;
 }
-@media (max-width:480px) {
+
+/* Responsive adjustments for devices with a max-width of 480px */
+@media (max-width: 480px) {
   .image-logo {
     height: 200px;
     width: 100%;
-    aspect-ratio: auto 200 / 150;
-    margin: 0px;
+    aspect-ratio: 4 / 3;
+    margin: 0;
   }
-  .image-log0-con{
-    margin: 0px;
+  .image-log0-con {
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-  .job-list-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-left: 150px;
-    margin-right: 120px;  
   }
 }
 
+/* Styling for job meta cards */
 .job-meta-card {
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 1.5rem;
-  background: white;
+  background: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
-  transition: transform 0.2s;
   border: 1px solid #ddd;
-  transition: border 0.3s ease;
-  width: auto;
+  transition: transform 0.2s, border 0.3s ease;
+  width: 100%;
   margin: 0.5rem 0;
   border-radius: 15px;
-  width: 100%;
 }
 
+.job-meta-card:hover {
+  transform: translateY(-2px);
+}
 
-.meta-details{
+/* Spacing for meta details */
+.meta-details {
   padding-right: 10px;
 }
-.head-message{
+
+/* Centered text for header messages */
+.head-message {
   text-align: center;
 }
