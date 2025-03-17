@@ -93,7 +93,7 @@ const JobDetail = () => {
             Apply
           </a>
         </div>
-        <Link to="/" className="back-button">← Back to Listings</Link>
+        <Link to="/" className="back-button">← Back</Link>
       </div>
     </div>
   );
