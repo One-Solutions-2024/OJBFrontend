@@ -50,6 +50,67 @@ const Home = () => {
   return (
     <div className="home-page">
       <h1>ONE Job Board</h1>
+      <div className="flex items-center justify-center w-full h-full p-8">
+      <div className="relative w-full max-w-md aspect-video">
+        <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" className="w-full h-full">
+          {/* Circular background */}
+          <circle cx="200" cy="100" r="80" fill="#1e3a8a" />
+
+          {/* Inner circle */}
+          <circle cx="200" cy="100" r="65" fill="#3b82f6" stroke="#f0fdfa" strokeWidth="2" />
+
+          {/* Letters with overlapping effect */}
+          <g transform="translate(200, 100) rotate(-10)">
+            <text
+              x="-55"
+              y="15"
+              fontFamily="Arial, sans-serif"
+              fontSize="60"
+              fontWeight="bold"
+              fill="#f0fdfa"
+              textAnchor="start"
+            >
+              O
+            </text>
+            <text
+              x="-15"
+              y="15"
+              fontFamily="Arial, sans-serif"
+              fontSize="60"
+              fontWeight="bold"
+              fill="#f0fdfa"
+              textAnchor="start"
+            >
+              J
+            </text>
+            <text
+              x="15"
+              y="15"
+              fontFamily="Arial, sans-serif"
+              fontSize="60"
+              fontWeight="bold"
+              fill="#f0fdfa"
+              textAnchor="start"
+            >
+              B
+            </text>
+          </g>
+
+          {/* Decorative elements */}
+          <path d="M200,20 A80,80 0 0,1 280,100" fill="none" stroke="#3b82f6" strokeWidth="4" strokeLinecap="round" />
+
+          <path d="M120,100 A80,80 0 0,1 200,180" fill="none" stroke="#2dd4bf" strokeWidth="4" strokeLinecap="round" />
+
+          {/* Small dots */}
+          <circle cx="280" cy="100" r="5" fill="#f0fdfa" />
+          <circle cx="120" cy="100" r="5" fill="#f0fdfa" />
+          <circle cx="200" cy="20" r="5" fill="#f0fdfa" />
+          <circle cx="200" cy="180" r="5" fill="#f0fdfa" />
+
+         
+        </svg>
+      </div>
+    </div>
       <div className='image-log0-con'>
         <img
           src={assets.one_job_board_logo}

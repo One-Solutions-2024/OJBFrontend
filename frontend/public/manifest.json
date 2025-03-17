@@ -3,17 +3,17 @@
   "name": "One Job Board",
   "icons": [
     {
-      "src": "https://res.cloudinary.com/dsjcty43b/image/upload/v1742050105/one_job_board_logo_hwn0ip.jpg",
+      "src": "https://res.cloudinary.com/dsjcty43b/image/upload/v1742212523/one_job_board_icon_logo_ddabqy.png",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },
     {
-      "src": "https://res.cloudinary.com/dsjcty43b/image/upload/v1742050105/one_job_board_logo_hwn0ip.jpg",
+      "src": "https://res.cloudinary.com/dsjcty43b/image/upload/v1742212523/one_job_board_icon_logo_ddabqy.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "https://res.cloudinary.com/dsjcty43b/image/upload/v1742050105/one_job_board_logo_hwn0ip.jpg",
+      "src": "https://res.cloudinary.com/dsjcty43b/image/upload/v1742212523/one_job_board_icon_logo_ddabqy.png",
       "type": "image/png",
       "sizes": "512x512"
     }
