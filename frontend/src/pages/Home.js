@@ -77,7 +77,10 @@ const Home = () => {
               </div>
               <h5>Location</h5>
               <div className="meta-details">
-                <h5>Posted</h5>
+                <h5>Posted
+
+                  
+                </h5>
               </div>
             </div>
             {jobsToShow.length === 0 ? (
