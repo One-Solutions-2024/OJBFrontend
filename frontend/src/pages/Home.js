@@ -60,12 +60,14 @@ const Home = () => {
           className="image-logo"
           alt="company logo"
         />
-      </div>
-      <h3>All jobs and opportunities in one place.</h3>
+         <h3>All jobs and opportunities in one place.</h3>
       <p>
         Explore the top Developer and Tester roles with our curated listings from leading companies in India.
       </p>
-      {loading ? (
+      </div>
+     
+     <div className='job-list-container'>
+     {loading ? (
         <div className='loading'><div className="loader"></div></div>
       ) : (
         <>
@@ -99,6 +101,7 @@ const Home = () => {
           </div>
         </>
       )}
+     </div>
     </div>
   );
 };
