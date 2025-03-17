@@ -50,11 +50,13 @@ const Home = () => {
   return (
     <div className="home-page">
       <h1>ONE Job Board</h1>
-      <img
+     <div className='image-log0-con'>
+     <img
         src={assets.one_job_board_logo}
         className="image-logo"
         alt="company logo"
       />
+     </div>
       <h3>All jobs and opportunities in one place.</h3>
       <p>
         Explore the top Developer and Tester roles with our curated listings from leading companies in India.

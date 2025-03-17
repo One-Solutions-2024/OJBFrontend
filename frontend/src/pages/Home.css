@@ -9,9 +9,16 @@
 
 @media (max-width:480px) {
   .image-logo {
-    height: 100px;
-    width: 200px;
+    height: 200px;
+    width: 100%;
     aspect-ratio: auto 200 / 150;
+    margin: 0px;
+  }
+  .image-log0-con{
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
