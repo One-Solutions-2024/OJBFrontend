@@ -23,7 +23,7 @@ const JobDetail = () => {
     fetchJob();
   }, [id, slug]);
 
-  if (loading) return <div className="loading">Loading job details...</div>;
+  if (loading) return <div className='loading'><div className="loader"></div></div>;
   if (!job) return <div className="error">Job not found. <Link to="/">Back to home</Link></div>;
 
   return (

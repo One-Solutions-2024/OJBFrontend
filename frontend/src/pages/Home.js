@@ -50,19 +50,19 @@ const Home = () => {
   return (
     <div className="home-page">
       <h1>ONE Job Board</h1>
-     <div className='image-log0-con'>
-     <img
-        src={assets.one_job_board_logo}
-        className="image-logo"
-        alt="company logo"
-      />
-     </div>
+      <div className='image-log0-con'>
+        <img
+          src={assets.one_job_board_logo}
+          className="image-logo"
+          alt="company logo"
+        />
+      </div>
       <h3>All jobs and opportunities in one place.</h3>
       <p>
         Explore the top Developer and Tester roles with our curated listings from leading companies in India.
       </p>
       {loading ? (
-        <div className="loading">Loading jobs...</div>
+        <div className='loading'><div className="loader"></div></div>
       ) : (
         <>
           {featuredJob && (
@@ -81,7 +81,7 @@ const Home = () => {
               <div className="meta-details">
                 <h5>Posted
 
-                  
+
                 </h5>
               </div>
             </div>
