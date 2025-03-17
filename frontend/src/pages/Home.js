@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import JobCard from '../components/JobCard';
 import { getJobs } from '../services/jobService';
 import { assets } from "../assets/assets";
+
 import "./Home.css";
 
 const Home = () => {
@@ -49,7 +50,10 @@ const Home = () => {
 
   return (
     <div className="home-page">
-      <h1>ONE Job Board</h1>
+      <div className="text-center">
+        <h1 className="text-2xl font-bold text-gray-800">ONE JOB BOARD</h1>
+        <p className="text-gray-600 head-message">Your one-stop destination for job listings</p>
+      </div>
       <div className='image-log0-con'>
         <img
           src={assets.one_job_board_logo}

@@ -40,9 +40,10 @@
   width: 100%;
 }
 
-h1 {
-  text-decoration: underline;
-}
+
 .meta-details{
   padding-right: 10px;
+}
+.head-message{
+  text-align: center;
 }
