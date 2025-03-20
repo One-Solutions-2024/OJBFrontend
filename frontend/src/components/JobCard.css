@@ -19,15 +19,18 @@
 
 .company-logo {
   flex-shrink: 0;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
   overflow: hidden;
   background: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-right: 100px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+.company-card-logo{
+  border-radius: 5px;
+  width: 50px;
+  height: 50px;
 }
 
 .immage-title-container {
@@ -91,26 +94,51 @@
 }
 
 @media (max-width: 768px) {
-  .job-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+ .job-card{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: auto;
+ }
+ .small_device_title{
+  display: block !important;
 
-  .company-logo {
-    margin-right: 10px;
-  }
-
-  .immage-title-container {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .location-salary-container {
-    width: 100%;
-  }
-
-  .job-details {
-    width: 100%;
-  }
+ }
+ .title-company-container{
+  display: none;
+ }
+ .small_device-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+ }
+ .company-logo{
+  margin-right: 10px;
+ }
+ .immage-title-container{
+  font-size: 10px;
+  display: flex;
+ }
+ .date{
+  font-size: 10px;
+  margin-left: 10px;
+ }
+ .location-salary-container{
+  width: auto;
+  display: flex;
+ }
+ .salary{
+  margin-left: 10px;
+ }
+ 
+ .job-title{
+  font-size: 15px;
+ }
 }
+.small_device_title{
+  display: none;
+}
+.company{
+  color: #ff5722;
+  font-weight: bold;
+ }

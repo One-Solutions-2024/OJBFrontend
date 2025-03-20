@@ -20,7 +20,8 @@ const JobCard = ({ job }) => {
       className={`job-card ${isRecent ? 'highlight' : ''}`}
       onClick={() => window.open(`/jobs/${job.id}/${job.url}`, '_blank')}
     >
-      <div className="company-logo">
+     <div className='small_device-row'>
+     <div className="company-logo">
         <img
           src={job.image_link}
           alt={job.companyname}
@@ -28,10 +29,16 @@ const JobCard = ({ job }) => {
           onError={(e) => { e.target.onerror = null; e.target.src = '/placeholder.png'; }}
         />
       </div>
+      <div className='small_device_title'>
+      <span className='job-title'>{job.title.slice(0,25)}</span>
+      <span className="company">{capitalize(job.companyname).slice(0,23)}</span>
+   
+      </div>
+     </div>
      <div className='immage-title-container'>
      <div className='title-company-container'>
-        <span className='job-title'>{job.title.slice(0, 20)}</span>
-        <span className="company">{capitalize(job.companyname.slice(0, 10))}</span>
+        <span className='job-title'>{job.title.slice(0,25)}</span>
+        <span className="company">{capitalize(job.companyname).slice(0,25)}</span>
       </div>
       <div className='location-salary-container'>
         <span className="location">📍{job.location.slice(0, 20)}</span>
