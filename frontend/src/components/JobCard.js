@@ -18,7 +18,7 @@ const JobCard = ({ job }) => {
   return (
     <div
       className={`job-card ${isRecent ? 'highlight' : ''}`}
-      onClick={() => window.open(`/jobs/${job.id}/${job.url}`, '_blank')}
+      onClick={() => window.open(`/jobs/${job.id}/${job.url}`)}
     >
      <div className='small_device-row'>
      <div className="company-logo">
