@@ -21,3 +21,14 @@ export const getJobById = async (id, slug) => {
     return null;
   }
 };
+// Update trackJobClick to use full API URL
+export const trackJobClick = async (jobId) => {
+  const response = await fetch(`${API_URL}/jobs/${jobId}/click`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  });
+  if (!response.ok) throw new Error('Failed to track click');
+  return response.json();
+};

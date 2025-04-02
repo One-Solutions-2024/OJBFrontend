@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { getJobById } from '../services/jobService';
+import { getJobById, trackJobClick } from '../services/jobService';
 import "./JobDetail.css";
 
 const JobDetail = () => {
@@ -10,18 +10,36 @@ const JobDetail = () => {
   const [clickCount, setClickCount] = useState(0); // new state variable for click count
 
   useEffect(() => {
-    const fetchJob = async () => {
+    const fetchData = async () => {
       try {
-        const data = await getJobById(id, slug);
-        setJob(data);
+        const jobData = await getJobById(id, slug);
+        
+        if (jobData) {
+          setJob(jobData);
+          setClickCount(jobData.click_count || 0);
+        }
       } catch (error) {
         console.error('Fetch error:', error);
       } finally {
         setLoading(false);
       }
     };
-    fetchJob();
+    
+    fetchData();
   }, [id, slug]);
+
+  const handleApplyClick = async () => {
+  try {
+    const result = await trackJobClick(id);
+    // Update with actual server count
+    setClickCount(result.newCount);
+  } catch (error) {
+    console.error('Failed to track click:', error);
+    // Fallback optimistic update
+    setClickCount(prev => prev + 1);
+  }
+};
+
 
   if (loading) return <div className='loading'><div className="loader"></div></div>;
   if (!job) return <div className="error">Job not found. <Link to="/">Back to home</Link></div>;
@@ -81,14 +99,13 @@ const JobDetail = () => {
 
       <div className="actions">
       <span className='click-count'>* Over {clickCount} People clicked to Apply</span>
-
         <div className="apply-link-container">
           <a
             href={job.apply_link}
             target="_blank"
             rel="noopener noreferrer"
             className="image-apply-link"
-            onClick={() => setClickCount(clickCount + 1)} // update click count
+            onClick={handleApplyClick}
           >
             Apply
           </a>

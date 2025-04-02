@@ -1,8 +1,10 @@
 // src/components/JobCard.js
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import './JobCard.css';
 
 const JobCard = ({ job }) => {
+  const navigate = useNavigate();
   // Parse the job's posting date and calculate the difference from today.
   const jobDate = new Date(job.date_posted);
   const now = new Date();
@@ -18,7 +20,7 @@ const JobCard = ({ job }) => {
   return (
     <div
       className={`job-card ${isRecent ? 'highlight' : ''}`}
-      onClick={() => window.open(`/jobs/${job.id}/${job.url}`)}
+      onClick={() => navigate(`/jobs/${job.id}/${job.url}`)}
     >
      <div className='small_device-row'>
      <div className="company-logo">
