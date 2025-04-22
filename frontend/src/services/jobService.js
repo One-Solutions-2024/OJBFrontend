@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://xrjobsbackend.onrender.com/api';
+const API_URL = 'https://ojbbackend.onrender.com/api';
 
 export const getJobs = async () => {
   try {
@@ -31,4 +31,28 @@ export const trackJobClick = async (jobId) => {
   });
   if (!response.ok) throw new Error('Failed to track click');
   return response.json();
+};
+
+export const searchJobs = async (query, location) => {
+  try {
+    const { data } = await axios.get(`${API_URL}/search`, {
+      params: { query, location }
+    });
+    return data;
+  } catch (error) {
+    console.error('Error searching jobs:', error);
+    return [];
+  }
+};
+
+export const filterJobs = async (job_type, experience, salary) => {
+  try {
+    const { data } = await axios.get(`${API_URL}/filter`, {
+      params: { job_type, experience, salary }
+    });
+    return data;
+  } catch (error) {
+    console.error('Error filtering jobs:', error);
+    return [];
+  }
 };
