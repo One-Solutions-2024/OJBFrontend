@@ -60,48 +60,58 @@ const Home = () => {
           className="image-logo"
           alt="company logo"
         />
-         <h3>All jobs and opportunities in one place.</h3>
-      <p>
-        Explore the top Developer and Tester roles with our curated listings from leading companies in India.
-      </p>
+        <h3>All jobs and opportunities in one place.</h3>
+        <p>
+          Explore the top Developer and Tester roles with our curated listings from leading companies in India.
+        </p>
       </div>
-     
-     <div className='job-list-container'>
-     {loading ? (
-        <div className='loading'><div className="loader"></div></div>
-      ) : (
-        <>
-          {featuredJob && (
-            <div className="featured-job">
-              <JobCard job={featuredJob} />
-            </div>
-          )}
-          <div className="job-grid">
-            <div className="job-meta-card">
-              <div></div>
-              <div>
-                <h5>Company Name/Role</h5>
-                <span className="company"></span>
-              </div>
-              <h5>Location</h5>
-              <div className="meta-details">
-                <h5>Posted
 
+      <div className='job-list-container'>
+        {loading ? (
 
-                </h5>
-              </div>
+          <div className="ojb-loading">
+            <div className="ojb-spinner-wrapper">
+              <img
+                src={assets.ojb_logo}
+                className="ojb--logo-loading"
+                alt="Loading logo"
+              />
             </div>
-            {jobsToShow.length === 0 ? (
-              <div className="no-jobs">
-                <p>No jobs found. Please check back later.</p>
-              </div>
-            ) : (
-              jobsToShow.map(job => <JobCard key={job.id} job={job} />)
-            )}
           </div>
-        </>
-      )}
-     </div>
+
+        ) : (
+          <>
+            {featuredJob && (
+              <div className="featured-job">
+                <JobCard job={featuredJob} />
+              </div>
+            )}
+            <div className="job-grid">
+              <div className="job-meta-card">
+                <div></div>
+                <div>
+                  <h5>Company Name/Role</h5>
+                  <span className="company"></span>
+                </div>
+                <h5>Location</h5>
+                <div className="meta-details">
+                  <h5>Posted
+
+
+                  </h5>
+                </div>
+              </div>
+              {jobsToShow.length === 0 ? (
+                <div className="no-jobs">
+                  <p>No jobs found. Please check back later.</p>
+                </div>
+              ) : (
+                jobsToShow.map(job => <JobCard key={job.id} job={job} />)
+              )}
+            </div>
+          </>
+        )}
+      </div>
     </div>
   );
 };

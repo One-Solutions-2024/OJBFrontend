@@ -1,6 +1,7 @@
 import { assets } from '../../assets/assets'
 import { Link } from 'react-router-dom';
 
+
 import './index.css'
 
 const NotFound = () => (

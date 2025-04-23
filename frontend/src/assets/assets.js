@@ -4,6 +4,7 @@ import ojb_footer_logo from "./ojb_footer_logo.png"
 import footer_insta_icon from "./footer_insta_icon.png"
 import footer_youtube_icon from "./footer_youtube_icon.png"
 import footer_linkedin_icon from "./footer_linkedin_icon.png"
+import ojb_logo from "./ojb_logo.png"
 
 export const assets = {
     one_job_board_logo,
@@ -11,5 +12,6 @@ export const assets = {
     ojb_footer_logo,
     footer_insta_icon,
     footer_youtube_icon,
-    footer_linkedin_icon
+    footer_linkedin_icon,
+    ojb_logo
 }
